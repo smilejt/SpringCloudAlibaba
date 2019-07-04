@@ -1,11 +1,11 @@
-# SpringCloudDemo
-暂无
+# SpringCloudAlibaba
+
 #### 介绍
-暂无
+使用Spring Cloud + Spring Boot作为基础架构，阿里巴巴的Nacos作为服务注册中心和配置中心，集成Swagger等基础插件  
 #### 项目架构
 暂无
 #### 项目启动顺序
 暂无	
 #### 端口占用
-暂无  
+Auth登陆服务:8770  
 
