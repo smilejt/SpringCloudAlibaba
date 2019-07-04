@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: jt-auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: abandon-jt.com:8848
+  datasource:
+    url: jdbc:mysql://rm-wz9jezta3ntmwg02dso.mysql.rds.aliyuncs.com:3306/demo_user?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+    username: root
+    password: 2018NewLife!
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+server:
+  port: 8770
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
