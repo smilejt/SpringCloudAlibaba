@@ -32,7 +32,7 @@ public class AuthServiceImpl implements AuthService {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthServiceImpl.class);
 
-    @Autowired
+    @Resource
     private UserInfoMapper userInfoMapper;
 
     @Resource
