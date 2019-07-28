@@ -93,7 +93,7 @@
             <dependency>
                 <groupId>com.abandon.jt</groupId>
                 <artifactId>jt-common-utils</artifactId>
-                <version>0.0.1</version>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
 
             <dependency>
