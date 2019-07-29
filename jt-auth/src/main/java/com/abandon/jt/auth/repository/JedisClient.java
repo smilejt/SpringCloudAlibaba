@@ -6,11 +6,58 @@ package com.abandon.jt.auth.repository;
  * @Description:
  */
 public interface JedisClient {
+    /**
+     * get
+     * @param key key
+     * @return String
+     */
     String get(String key);
+
+    /**
+     * set
+     * @param key key
+     * @param value value
+     * @return String
+     */
     String set(String key, String value);
-    String hget(String hkey, String key);
-    long hset(String hkey, String key, String value);
+
+    /**
+     * hGet
+     * @param hKey hKey
+     * @param key key
+     * @return String
+     */
+    String hGet(String hKey, String key);
+
+    /**
+     * hSet
+     * @param hKey hKey
+     * @param key key
+     * @param value value
+     * @return long
+     */
+    long hSet(String hKey, String key, String value);
+
+    /**
+     * del
+     * @param key key
+     * @return long
+     */
     long del(String key);
-    long hdel(String hkey, String key);
+
+    /**
+     * hDel
+     * @param hKey hKey
+     * @param key key
+     * @return long
+     */
+    long hDel(String hKey, String key);
+
+    /**
+     * expire
+     * @param key key
+     * @param second second
+     * @return long
+     */
     long expire(String key, int second);
 }

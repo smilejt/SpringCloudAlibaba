@@ -1,4 +1,4 @@
-package com.abandon.jt.auth.repository.Impl;
+package com.abandon.jt.auth.repository.impl;
 
 import com.abandon.jt.auth.repository.JedisClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +13,7 @@ import redis.clients.jedis.JedisPool;
  */
 @Component
 public class JedisClientSingle implements JedisClient {
+
     @Autowired
     private JedisPool jedisPool;
 
@@ -33,17 +34,17 @@ public class JedisClientSingle implements JedisClient {
     }
 
     @Override
-    public String hget(String hkey, String key) {
+    public String hGet(String hKey, String key) {
         Jedis jedis = jedisPool.getResource();
-        String string = jedis.hget(hkey, key);
+        String string = jedis.hget(hKey, key);
         jedis.close();
         return string;
     }
 
     @Override
-    public long hset(String hkey, String key, String value) {
+    public long hSet(String hKey, String key, String value) {
         Jedis jedis = jedisPool.getResource();
-        Long result = jedis.hset(hkey, key, value);
+        long result = jedis.hset(hKey, key, value);
         jedis.close();
         return result;
     }
@@ -51,15 +52,15 @@ public class JedisClientSingle implements JedisClient {
     @Override
     public long del(String key) {
         Jedis jedis = jedisPool.getResource();
-        Long result = jedis.del(key);
+        long result = jedis.del(key);
         jedis.close();
         return result;
     }
 
     @Override
-    public long hdel(String hkey, String key) {
+    public long hDel(String hkey, String key) {
         Jedis jedis = jedisPool.getResource();
-        Long result = jedis.hdel(hkey, key);
+        long result = jedis.hdel(hkey, key);
         jedis.close();
         return result;
     }
@@ -67,7 +68,7 @@ public class JedisClientSingle implements JedisClient {
     @Override
     public long expire(String key, int second) {
         Jedis jedis = jedisPool.getResource();
-        Long result = jedis.expire(key, second);
+        long result = jedis.expire(key, second);
         jedis.close();
         return result;
     }

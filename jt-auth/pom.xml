@@ -75,14 +75,15 @@
 
         <!--自定义工具包-->
         <dependency>
-            <groupId>com.abandon.jt</groupId>
+            <groupId>com.abandon-jt.common</groupId>
             <artifactId>jt-common-utils</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
 
         <!--druid数据连接池-->
         <dependency>
