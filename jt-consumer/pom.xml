@@ -10,7 +10,7 @@
         <relativePath>../dependencies/pom.xml</relativePath>
     </parent>
 
-    <artifactId>jt-provider</artifactId>
+    <artifactId>jt-consumer</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -54,7 +54,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.abandon.jt.provider.ProviderApplication</mainClass>
+                    <mainClass>com.abandon.jt.consumer.ConsumerApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

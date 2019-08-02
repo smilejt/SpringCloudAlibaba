@@ -43,8 +43,7 @@ public class RedisConfig {
 
     @Bean
     public JedisPool getJedisPool(){    // 省略第一个参数则是采用 Protocol.DEFAULT_DATABASE
-        JedisPool jedisPool = new JedisPool(jedisPoolConfig(), redisNodeHost, redisNodePort,timeout,redisPassword);
-        return jedisPool;
+        return new JedisPool(jedisPoolConfig(), redisNodeHost, redisNodePort,timeout,redisPassword);
     }
 
     @Bean
