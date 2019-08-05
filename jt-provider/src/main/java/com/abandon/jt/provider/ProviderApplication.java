@@ -25,12 +25,4 @@ public class ProviderApplication {
         SpringApplication.run(ProviderApplication.class, args);
         logger.info("---------------------Provider启动成功---------------------");
     }
-
-    @RestController
-    public class EchoController {
-        @GetMapping(value = "/echo/{message}")
-        public String echo(@PathVariable String message) {
-            return "Hello Nacos Discovery " + message;
-        }
-    }
 }

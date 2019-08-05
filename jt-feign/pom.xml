@@ -14,7 +14,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>jt-provider</name>
+    <name>jt-feign</name>
     <url>https://abandon-jt.com</url>
     <inceptionYear>2019-Now</inceptionYear>
 
@@ -53,10 +53,10 @@
         </dependency>
 
         <!--Sentinel熔断-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

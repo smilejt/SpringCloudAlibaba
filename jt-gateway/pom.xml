@@ -10,20 +10,16 @@
         <relativePath>../dependencies/pom.xml</relativePath>
     </parent>
 
-    <artifactId>jt-consumer</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>jt-gateway</artifactId>
     <packaging>jar</packaging>
+    <version>1.0.0-SNAPSHOT</version>
 
-    <name>jt-consumer</name>
+    <name>jt-gateway</name>
     <url>https://abandon-jt.com</url>
     <inceptionYear>2019-Now</inceptionYear>
 
     <dependencies>
         <!-- Spring Boot Begin -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -40,12 +36,26 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-        <!-- Spring Cloud End -->
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+        <!-- Spring Cloud End -->
+
+        <!-- Commons Begin -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <!-- Commons Begin -->
     </dependencies>
 
     <build>
@@ -54,7 +64,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.abandon.jt.consumer.ConsumerApplication</mainClass>
+                    <mainClass>com.abandon.jt.gateway.GatewayApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
