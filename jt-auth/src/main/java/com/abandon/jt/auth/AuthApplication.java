@@ -1,5 +1,6 @@
 package com.abandon.jt.auth;
 
+import com.alibaba.nacos.spring.context.annotation.config.NacosPropertySource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -14,6 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @EnableSwagger2
 @SpringBootApplication
+@NacosPropertySource(dataId = "redis", autoRefreshed = true)
 @EnableDiscoveryClient
 public class AuthApplication {
 

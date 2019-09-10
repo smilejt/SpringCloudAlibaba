@@ -1,9 +1,8 @@
 package com.abandon.jt.auth.config;
 
-import org.springframework.beans.factory.annotation.Value;
+import com.alibaba.nacos.api.config.annotation.NacosValue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 import redis.clients.jedis.JedisShardInfo;
@@ -18,21 +17,20 @@ import java.util.List;
  * @Description:
  */
 @Configuration
-@PropertySource(value = "classpath:redis.properties")
 public class RedisConfig {
-    @Value("${redis.maxTotal}")
+    @NacosValue(value = "${redis.maxTotal:100}", autoRefreshed = true)
     private Integer redisMaxTotal;
 
-    @Value("${redis.node.host}")
+    @NacosValue(value = "${redis.node.host:94.191.101.181}", autoRefreshed = true)
     private String redisNodeHost;
 
-    @Value("${redis.node.port}")
+    @NacosValue(value = "${redis.node.port:6379}", autoRefreshed = true)
     private Integer redisNodePort;
 
-    @Value("${redis.node.password}")
+    @NacosValue(value = "${redis.node.password:2018NewLife.}", autoRefreshed = true)
     private String redisPassword;
 
-    @Value("${redis.node.timeout}")
+    @NacosValue(value = "${redis.node.timeout:3000}", autoRefreshed = true)
     private Integer timeout;
 
     private JedisPoolConfig jedisPoolConfig() {
@@ -42,8 +40,8 @@ public class RedisConfig {
     }
 
     @Bean
-    public JedisPool getJedisPool(){    // 省略第一个参数则是采用 Protocol.DEFAULT_DATABASE
-        return new JedisPool(jedisPoolConfig(), redisNodeHost, redisNodePort,timeout,redisPassword);
+    public JedisPool getJedisPool() {    // 省略第一个参数则是采用 Protocol.DEFAULT_DATABASE
+        return new JedisPool(jedisPoolConfig(), redisNodeHost, redisNodePort, timeout, redisPassword);
     }
 
     @Bean

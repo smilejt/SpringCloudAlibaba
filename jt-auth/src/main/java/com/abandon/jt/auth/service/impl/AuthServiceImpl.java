@@ -8,11 +8,10 @@ import com.abandon.jt.auth.utils.CustomizeUtils;
 import com.abandon.jt.common.utils.CookieUtils;
 import com.abandon.jt.common.utils.CustomizeResult;
 import com.abandon.jt.common.utils.JsonUtils;
+import com.alibaba.nacos.api.config.annotation.NacosValue;
 import com.alibaba.nacos.client.naming.utils.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -26,7 +25,6 @@ import java.util.UUID;
  * @Description:
  */
 @Service
-@PropertySource(value = "classpath:redis.properties")
 public class AuthServiceImpl implements AuthService {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthServiceImpl.class);
@@ -37,10 +35,10 @@ public class AuthServiceImpl implements AuthService {
     @Resource
     private JedisClient jedisClient;
 
-    @Value("${REDIS_USER_SESSION_KEY}")
+    @NacosValue(value = "${REDIS_USER_SESSION_KEY:REDIS_USER_SESSION}", autoRefreshed = true)
     private String redisUserSession;
 
-    @Value("${SSO_SESSION_EXPIRE}")
+    @NacosValue(value = "${SSO_SESSION_EXPIRE:3600}", autoRefreshed = true)
     private Integer ssoSessionExpire;
 
     @Override
